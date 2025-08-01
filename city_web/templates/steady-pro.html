@@ -1,0 +1,455 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Steady Pro - Voyage Compass</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- ========================================
+        PAGE: Steady Pro Character Design
+        PURPOSE: Steady Pro 角色設計頁面，展示角色介紹和推薦城市
+        FEATURES: 響應式佈局、城市卡片、懸停效果、排名展示
+        AUTHOR: Voyage Compass Team
+        LAST UPDATED: 2024-12-19
+    ======================================== -->
+
+    <!-- 樣式檔案 -->
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/custom.css" />
+    <link rel="stylesheet" href="static/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="static/css/index-custom.css" />
+
+    <!-- Tailwind CSS 框架 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 無 JavaScript 時的樣式 -->
+    <noscript>
+        <link rel="stylesheet" href="static/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="landing is-preload">
+
+    <!-- ========================================
+        COMPONENT: Left Navigation Menu
+        PURPOSE: 固定式側邊導航選單，與其他頁面保持一致
+        FEATURES: Logo展示、城市探索、角色情境、響應式折疊
+    ======================================== -->
+    <nav class="left-menu" id="leftMenu">
+        <!-- Logo 區域 -->
+        <div class="menu-header">
+            <div class="menu-logo">
+                <div class="menu-logo-circle">
+                    <img src="static/images/Voyage Compass Logo.png" alt="Voyage Compass Logo" />
+                </div>
+            </div>
+        </div>
+
+        <!-- 導航項目區域 -->
+        <div class="menu-nav">
+            <div class="menu-section">
+                <!-- 主要導航項目 -->
+                <a href="index.html" class="menu-item main-menu-item">
+                    首頁
+                </a>
+                <a href="index.html#gallery" class="menu-item main-menu-item">
+                    城市探索
+                </a>
+
+                <!-- 城市子項目 - 10個主要國際城市 -->
+                <a href="bangkok.html" class="menu-item">
+                    <img src="static/images/bkk_icon_1.png" alt="Bangkok">曼谷 Bangkok
+                </a>
+                <a href="hong-kong.html" class="menu-item">
+                    <img src="static/images/hkg_icon_1.png" alt="Hong Kong">香港 Hong Kong
+                </a>
+                <a href="london.html" class="menu-item">
+                    <img src="static/images/lon_icon_1.png" alt="London">倫敦 London
+                </a>
+                <a href="new-york-city.html" class="menu-item">
+                    <img src="static/images/nyc_icon_1.png" alt="New York City">紐約 New York City
+                </a>
+                <a href="san-francisco.html" class="menu-item">
+                    <img src="static/images/sfo_icon_1.png" alt="San Francisco">舊金山 San Francisco
+                </a>
+                <a href="seoul.html" class="menu-item">
+                    <img src="static/images/sel_icon_1.png" alt="Seoul">首爾 Seoul
+                </a>
+                <a href="singapore.html" class="menu-item">
+                    <img src="static/images/sgp_icon_1.png" alt="Singapore">新加坡 Singapore
+                </a>
+                <a href="sydney.html" class="menu-item">
+                    <img src="static/images/syd_icon_1.png" alt="Sydney">雪梨 Sydney
+                </a>
+                <a href="taipei.html" class="menu-item">
+                    <img src="static/images/tpe_icon_1.png" alt="Taipei">台北 Taipei
+                </a>
+                <a href="tokyo.html" class="menu-item">
+                    <img src="static/images/tyo_icon_1.png" alt="Tokyo">東京 Tokyo
+                </a>
+                <a href="vancouver.html" class="menu-item">
+                    <img src="static/images/yvr_icon_1.png" alt="Vancouver">溫哥華 Vancouver
+                </a>
+                <a href="index.html#characters" class="menu-item main-menu-item">
+                    角色情境
+                </a>
+
+                <!-- 角色情境子項目 - 4種職涯發展模式 -->
+                <a href="rocket-dev.html" class="menu-item">
+                    <i class="fas fa-rocket"></i>職場新人 Rocket Dev
+                </a>
+                <a href="steady-pro.html" class="menu-item">
+                    <i class="fas fa-shield-alt"></i>穩健高薪 Steady Pro
+                </a>
+                <a href="nomad-coder.html" class="menu-item">
+                    <i class="fas fa-laptop"></i>數位遊牧 Nomad Coder
+                </a>
+                <a href="startup-maverick.html" class="menu-item">
+                    <i class="fas fa-lightbulb"></i>創業浪客 Startup Maverick
+                </a>
+                <a href="#" class="menu-item main-menu-item">
+                    指標一覽表
+                </a>
+                <a href="career-velocity-index.html" class="menu-item active">
+                    <img src="static/images/advancement.png" alt="Feature">Career Velocity Index
+                </a>
+                <a href="coworking-space.html" class="menu-item">
+                    <img src="static/images/briefcase.png" alt="Feature">Co-working Space Index
+                </a>
+                <a href="global-tech-env.html" class="menu-item">
+                    <img src="static/images/technology.png" alt="Feature">City Tech Index
+                </a>
+                <a href="rent-comparison.html" class="menu-item">
+                    <img src="static/images/home.png" alt="Feature">Rent Comparison
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+    COMPONENT: Main Content Area
+    PURPOSE: 角色設計頁面主要內容，包含角色介紹和推薦城市
+    LAYOUT: 響應式 Flexbox 佈局，左側 2/5，右側 3/5
+======================================== -->
+    <div class="main-content" id="mainContent">
+        <!-- 主要內容區域 -->
+        <article id="main">
+            <!-- ========================================
+            SECTION: Character Profile
+            PURPOSE: 角色檔案展示區域，包含角色介紹和推薦城市
+            LAYOUT: 左側角色資訊 (2/5)，右側城市推薦 (3/5)
+        ======================================== -->
+            <section class="wrapper style1">
+                <div class="flex w-full min-h-[300px] pl-24 gap-6">
+
+                    <!-- ========================================
+                    LEFT SIDE: Character Information (2/5 width)
+                    PURPOSE: 角色基本資訊和描述
+                    LAYOUT: 網格佈局，上方角色卡片 (60%)，下方描述 (40%)
+                ======================================== -->
+                    <div class="w-2/5 grid grid-rows-[60%_40%] gap-6">
+
+                        <!-- 角色卡片 - 帶背景圖片的主要角色展示 -->
+                        <div class="bg-white rounded-lg shadow p-6 flex items-center gap-4"
+                            style="background-image: url('static/images/Steady Pro.png'); background-size: cover; background-position: center;">
+                            <div>
+                                <!-- 角色標題 - 使用白色文字和陰影確保可讀性 -->
+                                <h2 class="text-white"
+                                    style="color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">
+                                    <i class="fas fa-shield-alt"
+                                        style="margin-right: 10px; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.7);"></i>
+                                    Steady Pro
+                                </h2>
+                                <!-- 角色副標題 -->
+                                <h3 class="text-white"
+                                    style="color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">穩健高薪保存款</h3>
+                            </div>
+                        </div>
+
+                        <!-- 角色描述卡片 - 詳細的角色說明 -->
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col justify-center">
+
+                            <p>今天你是一位講究穩健的專業人士，以固定薪水和完善社會保障作防護盾，為未來財務藍圖奠基。你用紀律儲蓄與精準投資，讓每月現金流變成複利引擎，既守護生活品質，也穩步築起長期財富。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ========================================
+                    RIGHT SIDE: City Recommendations (3/5 width)
+                    PURPOSE: 推薦城市展示，包含排名和評分
+                    LAYOUT: 3x2 網格佈局，前3個為可點擊城市卡片
+                ======================================== -->
+                    <div class="w-3/5 flex items-center justify-center pr-16">
+                        <div class="grid grid-cols-3 gap-6 w-full h-full">
+
+                            <!-- ========================================
+                            CITY CARD 1: Singapore (Rank 1)
+                            FEATURES: 可點擊連結、懸停效果、排名標籤、背景圖片
+                        ======================================== -->
+                            <a href="singapore.html" class="character-card-link group">
+                                <div class="character-card rounded-lg shadow p-6 h-96 relative overflow-hidden"
+                                    style="background-image: url('static/images/Singapore.png'); background-size: cover; background-position: center;">
+                                    <!-- 排名和分數標籤 - 固定在左上角，z-index 確保在最上層 -->
+                                    <div class="absolute top-4 left-4 z-30">
+                                        <div class="bg-black/40 text-white rounded px-3 py-1 mb-2 font-bold text-lg">🏆
+                                            Rank 1</div>
+                                        <div class="bg-black/40 text-white rounded px-3 py-1 mb-2 font-bold text-lg">
+                                            Singapore</div>
+                                        <div class="bg-black/30 text-white rounded px-3 py-1 font-semibold">分數：100</div>
+                                    </div>
+
+                                    <!-- 背景遮罩 - 提供文字可讀性 -->
+                                    <div class="absolute inset-0 bg-black/30 z-0"></div>
+
+                                    <!-- 懸停覆蓋層 - 顯示城市名稱和描述 -->
+                                    <div
+                                        class="absolute inset-0 flex flex-col items-center justify-center bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
+                                        <h3 class="text-2xl font-bold mb-2 max-w-[90%] mx-auto text-center break-words"
+                                            style="color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">新加坡
+                                        </h3>
+                                        <p class="text-base max-w-[90%] mx-auto text-center break-words"
+                                            style="color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">
+                                            穩定政治環境，優質社會保障制度</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- ========================================
+                            CITY CARD 2: Sydney (Rank 2)
+                            FEATURES: 可點擊連結、懸停效果、排名標籤、背景圖片
+                        ======================================== -->
+                            <a href="sydney.html" class="character-card-link group">
+                                <div class="character-card rounded-lg shadow p-6 h-96 relative overflow-hidden"
+                                    style="background-image: url('static/images/Sydney.png'); background-size: cover; background-position: center;">
+                                    <!-- 排名和分數標籤 -->
+                                    <div class="absolute top-4 left-4 z-30">
+                                        <div class="bg-black/40 text-white rounded px-3 py-1 mb-2 font-bold text-lg">🥈
+                                            Rank 2</div>
+                                        <div class="bg-black/30 text-white rounded px-3 py-1 font-semibold">分數：88</div>
+                                    </div>
+
+                                    <!-- 背景遮罩 -->
+                                    <div class="absolute inset-0 bg-black/30 z-0"></div>
+
+                                    <!-- 懸停覆蓋層 -->
+                                    <div
+                                        class="absolute inset-0 flex flex-col items-center justify-center bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
+                                        <h3 class="text-2xl font-bold mb-2 max-w-[90%] mx-auto text-center break-words"
+                                            style="color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">雪梨
+                                        </h3>
+                                        <p class="text-base max-w-[90%] mx-auto text-center break-words"
+                                            style="color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">
+                                            高生活品質，完善的醫療保健系統</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- ========================================
+                            CITY CARD 3: Vancouver (Rank 3)
+                            FEATURES: 可點擊連結、懸停效果、排名標籤、背景圖片
+                        ======================================== -->
+                            <a href="vancouver.html" class="character-card-link group">
+                                <div class="character-card rounded-lg shadow p-6 h-96 relative overflow-hidden"
+                                    style="background-image: url('static/images/Vancouver.png'); background-size: cover; background-position: center;">
+                                    <!-- 排名和分數標籤 -->
+                                    <div class="absolute top-4 left-4 z-30">
+                                        <div class="bg-black/40 text-white rounded px-3 py-1 mb-2 font-bold text-lg">🥉
+                                            Rank 3</div>
+                                        <div class="bg-black/30 text-white rounded px-3 py-1 font-semibold">分數：78</div>
+                                    </div>
+
+                                    <!-- 背景遮罩 -->
+                                    <div class="absolute inset-0 bg-black/30 z-0"></div>
+
+                                    <!-- 懸停覆蓋層 -->
+                                    <div
+                                        class="absolute inset-0 flex flex-col items-center justify-center bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
+                                        <h3 class="text-2xl font-bold mb-2 max-w-[90%] mx-auto text-center break-words"
+                                            style="color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">溫哥華
+                                        </h3>
+                                        <p class="text-base max-w-[90%] mx-auto text-center break-words"
+                                            style="color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">
+                                            友善移民政策，優質教育環境</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- ========================================
+                            STATISTICS CARD 4: Salary Rankings
+                            PURPOSE: 顯示城市薪資排名和評分
+                            FEATURES: 進度條、排名標籤、分數顯示
+                        ======================================== -->
+                            <div class="bg-white rounded-lg shadow p-6 max-w-sm font-sans">
+                                <!-- 卡片標題 -->
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xs font-bold text-gray-500">💰 薪資水準</h3>
+                                </div>
+
+                                <!-- 城市排名列表 -->
+                                <div class="space-y-4">
+                                    <!-- 新加坡排名 -->
+                                    <div class="city-item text-xs whitespace-nowrap">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">#1 Singapore</span>
+                                        </div>
+                                        <span
+                                            class="font-bold text-amber-600 ml-1 block text-right w-full">88/100</span>
+                                        <!-- 進度條 - 視覺化評分 -->
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-amber-500 h-2 rounded-full" style="width: 88%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 雪梨排名 -->
+                                    <div class="city-item text-xs whitespace-nowrap">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">#2 Sydney</span>
+                                        </div>
+                                        <span class="font-bold text-blue-600 ml-1 block text-right w-full">82/100</span>
+                                        <!-- 進度條 -->
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-500 h-2 rounded-full" style="width: 82%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 溫哥華排名 -->
+                                    <div class="city-item text-xs whitespace-nowrap">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">#3 Vancouver</span>
+                                        </div>
+                                        <span class="font-bold text-blue-500 ml-1 block text-right w-full">78/100</span>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-400 h-2 rounded-full" style="width: 78%;"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- ========================================
+                            STATISTICS CARD 5: Quality of Life
+                            PURPOSE: 顯示城市生活品質排名和評分
+                            FEATURES: 進度條、排名標籤、分數顯示
+                        ======================================== -->
+                            <div class="bg-white rounded-lg shadow p-6 max-w-sm font-sans">
+                                <!-- 卡片標題 -->
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xs font-bold text-gray-500">🏠 生活品質</h3>
+                                </div>
+
+                                <!-- 城市排名列表 -->
+                                <div class="space-y-4">
+                                    <!-- 雪梨排名 -->
+                                    <div class="city-item text-xs whitespace-nowrap">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">#1 Sydney</span>
+                                        </div>
+                                        <span
+                                            class="font-bold text-amber-600 ml-1 block text-right w-full">90/100</span>
+                                        <!-- 進度條 - 視覺化評分 -->
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-amber-500 h-2 rounded-full" style="width: 90%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 溫哥華排名 -->
+                                    <div class="city-item text-xs whitespace-nowrap">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">#2 Vancouver</span>
+                                        </div>
+                                        <span class="font-bold text-blue-600 ml-1 block text-right w-full">85/100</span>
+                                        <!-- 進度條 -->
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-500 h-2 rounded-full" style="width: 85%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 新加坡排名 -->
+                                    <div class="city-item text-xs whitespace-nowrap">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">#3 Singapore</span>
+                                        </div>
+                                        <span class="font-bold text-blue-500 ml-1 block text-right w-full">80/100</span>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-400 h-2 rounded-full" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- ========================================
+                            STATISTICS CARD 6: Social Security
+                            PURPOSE: 顯示城市社會保障排名和評分
+                            FEATURES: 進度條、排名標籤、分數顯示
+                        ======================================== -->
+                            <div class="bg-white rounded-lg shadow p-6 max-w-sm font-sans">
+                                <!-- 卡片標題 -->
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xs font-bold text-gray-500">🛡️ 社會保障</h3>
+                                </div>
+
+                                <!-- 城市排名列表 -->
+                                <div class="space-y-4">
+                                    <!-- 新加坡排名 -->
+                                    <div class="city-item text-xs whitespace-nowrap">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">#1 Singapore</span>
+                                        </div>
+                                        <span
+                                            class="font-bold text-amber-600 ml-1 block text-right w-full">92/100</span>
+                                        <!-- 進度條 - 視覺化評分 -->
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-amber-500 h-2 rounded-full" style="width: 92%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 雪梨排名 -->
+                                    <div class="city-item text-xs whitespace-nowrap">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">#2 Sydney</span>
+                                        </div>
+                                        <span class="font-bold text-blue-600 ml-1 block text-right w-full">88/100</span>
+                                        <!-- 進度條 -->
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-500 h-2 rounded-full" style="width: 88%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 溫哥華排名 -->
+                                    <div class="city-item text-xs whitespace-nowrap">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="font-semibold text-gray-800">#3 Vancouver</span>
+                                        </div>
+                                        <span class="font-bold text-blue-500 ml-1 block text-right w-full">85/100</span>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-400 h-2 rounded-full" style="width: 85%;"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/jquery.scrollex.min.js"></script>
+    <script src="static/js/jquery.scrolly.min.js"></script>
+    <script src="static/js/browser.min.js"></script>
+    <script src="static/js/breakpoints.min.js"></script>
+    <script src="static/js/util.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/index-custom.js"></script>
+
+</body>
+
+</html>

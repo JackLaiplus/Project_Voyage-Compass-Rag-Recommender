@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- Chosen Palette: Analyst's Calm (A professional, data-centric palette with a light neutral base and harmonious accent colors) -->
+<!-- Application Structure Plan: This final static version embeds the full 21,010-row dataset directly into the script, removing the file upload dependency. The application loads and immediately displays the complete analysis. The established narrative flow (summary cards, comparative charts, distribution plot, quadrant analysis) is generated on page load, providing a direct-to-insight experience. -->
+<!-- Visualization & Content Choices: All visualizations are now generated from the complete, embedded dataset upon script execution. The core charts (Bar, Box Plot, Scatter) remain the same, providing a comprehensive, static report with interactive tooltips and cross-chart highlighting. The box plot has been updated to hide individual item points for better clarity with large datasets. All charts use Canvas. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球11城市租賃市場互動儀表板 v9.1 (優化版)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 核心 Chart.js 函式庫 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <!-- 使用正確且受維護的 Boxplot 插件 -->
+    <script src="https://cdn.jsdelivr.net/npm/@sgratzl/chartjs-chart-boxplot@4.3.0/build/index.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/index-custom.css" />
+    <link rel="stylesheet" href="assets/css/rent-comparison.css" />
+</head>
+<body class="landing is-preload">
+
+    <!-- Left Menu -->
+    <nav class="left-menu" id="leftMenu">
+        <div class="menu-header">
+            <div class="menu-logo">
+                <div class="menu-logo-circle">
+                    <img src="sample assets/Voyage Compass Logo.png" alt="Voyage Compass Logo" />
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-nav">
+            <div class="menu-section">
+                <a href="index.html" class="menu-item main-menu-item">
+                    首頁
+                </a>
+                <a href="index.html#gallery" class="menu-item main-menu-item">
+                    城市探索
+                </a>
+                <a href="bangkok.html" class="menu-item">
+                    <img src="sample assets/bkk_icon_1.png" alt="Bangkok">曼谷 Bangkok
+                </a>
+                <a href="hong-kong.html" class="menu-item">
+                    <img src="sample assets/hkg_icon_1.png" alt="Hong Kong">香港 Hong Kong
+                </a>
+                <a href="london.html" class="menu-item">
+                    <img src="sample assets/lon_icon_1.png" alt="London">倫敦 London
+                </a>
+                <a href="new-york-city.html" class="menu-item">
+                    <img src="sample assets/nyc_icon_1.png" alt="New York City">紐約 New York City
+                </a>
+                <a href="san-francisco.html" class="menu-item">
+                    <img src="sample assets/sfo_icon_1.png" alt="San Francisco">舊金山 San Francisco
+                </a>
+                <a href="seoul.html" class="menu-item">
+                    <img src="sample assets/sel_icon_1.png" alt="Seoul">首爾 Seoul
+                </a>
+                <a href="singapore.html" class="menu-item">
+                    <img src="sample assets/sgp_icon_1.png" alt="Singapore">新加坡 Singapore
+                </a>
+                <a href="sydney.html" class="menu-item">
+                    <img src="sample assets/syd_icon_1.png" alt="Sydney">雪梨 Sydney
+                </a>
+                <a href="taipei.html" class="menu-item">
+                    <img src="sample assets/tpe_icon_1.png" alt="Taipei">台北 Taipei
+                </a>
+                <a href="tokyo.html" class="menu-item">
+                    <img src="sample assets/tyo_icon_1.png" alt="Tokyo">東京 Tokyo
+                </a>
+                <a href="vancouver.html" class="menu-item">
+                    <img src="sample assets/yvr_icon_1.png" alt="Vancouver">溫哥華 Vancouver
+                </a>
+                <a href="index.html#characters" class="menu-item main-menu-item">
+                    角色情境
+                </a>
+                <a href="rocket-dev.html" class="menu-item">
+                    <i class="fas fa-rocket"></i>職場新人 Rocket Dev
+                </a>
+                <a href="steady-pro.html" class="menu-item">
+                    <i class="fas fa-shield-alt"></i>穩健高薪 Steady Pro
+                </a>
+                <a href="nomad-coder.html" class="menu-item">
+                    <i class="fas fa-laptop"></i>數位遊牧 Nomad Coder
+                </a>
+                <a href="startup-maverick.html" class="menu-item">
+                    <i class="fas fa-lightbulb"></i>創業浪客 Startup Maverick
+                </a>
+                <a href="#" class="menu-item main-menu-item">
+                    指標一覽表
+                </a>
+                <a href="career-velocity-index.html" class="menu-item">
+                    <img src="sample assets/advancement.png" alt="Feature">Career Velocity Index
+                </a>
+                <a href="coworking-space.html" class="menu-item">
+                    <img src="sample assets/briefcase.png" alt="Feature">Co-working Space Index
+                </a>
+                <a href="global-tech-env.html" class="menu-item">
+                    <img src="sample assets/technology.png" alt="Feature">City Tech Index
+                </a>
+                <a href="rent-comparison.html" class="menu-item active">
+                    <img src="sample assets/home.png" alt="Feature">Rent Comparison
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <h1 class="text-2xl md:text-3xl font-bold text-center text-[#073B4C]">全球11城市租賃市場互動儀表板</h1>
+            <p class="text-center text-gray-500 mt-1">一份基於全球十一大城市租賃數據的互動式分析，揭示不同市場的租賃成本與空間價值</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <div class="interaction-tip">
+            <p>互動提示</p>
+            <p>將滑鼠懸停在任何圖表中的城市上，即可在整個儀表板中高亮顯示該城市的數據，以進行連動分析。</p>
+        </div>
+
+        <section id="dashboard-summary" class="mt-12">
+            <h2 class="text-2xl font-bold mb-2 section-title">市場核心指標</h2>
+            <p class="text-center text-gray-600 my-6 max-w-3xl mx-auto">從數據中提煉的關鍵宏觀指標，提供快速的市場概覽。</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="kpi-card rounded-lg p-6 flex flex-col justify-center items-center card">
+                    <dt class="text-sm font-medium text-gray-500 mb-1">總房源數量</dt>
+                    <dd id="total-properties" class="text-4xl font-extrabold text-blue-600">--</dd>
+                </div>
+                <div class="kpi-card rounded-lg p-6 flex flex-col justify-center items-center card">
+                    <dt class="text-sm font-medium text-gray-500 mb-1">分析城市總數</dt>
+                    <dd id="city-count" class="text-4xl font-extrabold text-blue-600">--</dd>
+                </div>
+                <div class="kpi-card rounded-lg p-6 flex flex-col justify-center items-center card">
+                    <dt class="text-sm font-medium text-gray-500 mb-1">最高平均月租</dt>
+                    <dd id="most-expensive-city" class="text-4xl font-extrabold text-red-600">--</dd>
+                </div>
+                <div class="kpi-card rounded-lg p-6 flex flex-col justify-center items-center card">
+                    <dt class="text-sm font-medium text-gray-500 mb-1">最高性價比</dt>
+                    <dd id="best-value-city" class="text-4xl font-extrabold text-green-600">--</dd>
+                </div>
+                <div class="kpi-card rounded-lg p-6 flex flex-col justify-center items-center card">
+                    <dt class="text-sm font-medium text-gray-500 mb-1">市場波動最大</dt>
+                    <dd id="most-volatile-city" class="text-4xl font-extrabold text-purple-600">--</dd>
+                </div>
+            </div>
+        </section>
+        
+        <section id="cost-vs-value" class="mb-12 mt-12">
+            <h2 class="text-2xl font-bold mb-2 section-title">成本 vs. 價值：雙維度比較</h2>
+            <p class="text-center text-gray-600 my-6 max-w-3xl mx-auto">絕對租金高昂的城市，其空間價值也最高嗎？本節從「月租金」和「每平方米租金」兩個角度進行比較，揭示不同市場在成本與居住空間價值之間的權衡。</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4 text-center">全球租賃市場概覽：平均月租金 (USD)</h3>
+                    <p class="text-sm text-gray-500 text-center mb-4">此圖表按絕對租金成本對城市進行排序，直接反映了在不同城市維持基本居住所需的現金流。</p>
+                    <div class="chart-container">
+                        <canvas id="monthlyRentChart"></canvas>
+                    </div>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4 text-center">揭示真實價值：每平方米平均租金 (USD)</h3>
+                    <p class="text-sm text-gray-500 text-center mb-4">此圖表按單位空間成本排序，是評估租賃「價值」的關鍵。注意觀察城市排名的變化，特別是香港（hkg）等高密度市場。</p>
+                    <div class="chart-container">
+                        <canvas id="pricePerSqmChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="distribution" class="mb-12">
+            <h2 class="text-2xl font-bold mb-2 section-title">市場波動性與價格分佈</h2>
+            <p class="text-center text-gray-600 my-6 max-w-3xl mx-auto">平均值會掩蓋市場內部從經濟型到豪華型房源的巨大價格跨度。箱形圖能直觀地展示每個城市租金價格的分佈、中位數和離散程度，揭示市場的真實結構。</p>
+            <div class="card p-6">
+                <h3 class="text-xl font-bold mb-4 text-center">各城市月租金分佈 (USD) - 箱形圖分析</h3>
+                <p class="text-sm text-gray-500 text-center mb-4">觀察箱體長度（價格集中度）和鬍鬚範圍（價格跨度）。紐約（NYC）和舊金山（SFO）等市場展現出極大的波動性，而其他市場則相對穩定。為方便比較，縱軸採用對數標尺。</p>
+                <div class="chart-container">
+                    <canvas id="distributionChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="quadrant" class="mb-12">
+            <h2 class="text-2xl font-bold mb-2 section-title">租金-價值矩陣：市場原型分析</h2>
+            <p class="text-center text-gray-600 my-6 max-w-3xl mx-auto">為了提供綜合視角，此散點圖將絕對租金（X軸）與單位價值（Y軸）結合，以所有城市的平均值為基準線，將各城市劃分為四種獨特的市場原型，超越了單一維度的排名。</p>
+            <div class="card p-6">
+                <div class="quadrant-legend">
+                    <div class="quadrant-item quadrant-high-price-compact"><b>高價緊湊型 (右上):</b> 絕對租金和單位成本雙高。</div>
+                    <div class="quadrant-item quadrant-economy-compact"><b>經濟緊湊型 (左上):</b> 絕對租金較低，但空間成本極高。</div>
+                    <div class="quadrant-item quadrant-economy-spacious"><b>經濟寬敞型 (左下):</b> 雙低，綜合性價比高。</div>
+                    <div class="quadrant-item quadrant-high-price-spacious"><b>高價寬敞型 (右下):</b> 絕對租金高，但空間相對寬敞。</div>
+                </div>
+                <div class="chart-container h-[500px] max-h-[70vh]">
+                    <canvas id="scatterPlot"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    </div>
+
+    <script src="assets/js/rent-comparison.js"></script>
+</body>
+</html>

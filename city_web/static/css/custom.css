@@ -1,0 +1,917 @@
+/* ========================================
+    FILE: custom.css
+    PURPOSE: Voyage Compass 專案自定義樣式檔案
+    FEATURES: 專業主題、響應式設計、組件樣式、動畫效果
+    AUTHOR: Voyage Compass Team
+    LAST UPDATED: 2024-12-19
+    DEPENDENCIES: main.css, index-custom.css
+======================================== */
+
+/* ========================================
+    SECTION: CSS Custom Properties (Variables)
+    PURPOSE: 定義全域顏色和樣式變數，便於主題管理和維護
+    USAGE: 使用 var(--variable-name) 來引用這些變數
+======================================== */
+
+/* Custom Professional & Calming Theme */
+
+/* Root Variables - Professional Travel & Career Theme */
+:root {
+    --primary-bg: #f1f5f9;
+    --secondary-bg: #ffffff;
+    --accent-bg: #e0f2fe;
+    --primary-text: #0f172a;
+    --secondary-text: #475569;
+    --accent-blue: #0ea5e9;
+    --accent-teal: #14b8a6;
+    --accent-amber: #f59e0b;
+    --accent-navy: #1e40af;
+    --border-color: #cbd5e1;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --gradient-blue: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    --gradient-teal: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+    --gradient-amber: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    --gradient-navy: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+}
+
+/* ========================================
+    SECTION: Global Styles Override
+    PURPOSE: 覆蓋預設樣式，建立一致的視覺基礎
+======================================== */
+
+/* Global Overrides */
+body {
+    background: var(--primary-bg) !important;
+    color: var(--primary-text) !important;
+    font-family: 'Inter', 'Open Sans', Helvetica, sans-serif;
+}
+
+body,
+input,
+select,
+textarea {
+    color: var(--primary-text) !important;
+}
+
+/* ========================================
+    SECTION: Typography Enhancement
+    PURPOSE: 改善文字的可讀性和視覺層次
+======================================== */
+
+/* Enhanced Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary-text) !important;
+}
+
+p {
+    line-height: 1.7;
+    color: var(--secondary-text) !important;
+}
+
+/* ========================================
+    SECTION: Header Component Styling
+    PURPOSE: 頁面頂部導航列的樣式設計
+    FEATURES: 固定定位、背景模糊、響應式設計
+======================================== */
+
+/* 主要頁面 Header 樣式 */
+#header {
+    background: #374151 !important;
+    backdrop-filter: none;
+    border-bottom: 1px solid #4b5563;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    transition: all 0.3s ease;
+    padding: 0 !important;
+    height: 3.5em !important;
+    line-height: 3.5em !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+}
+
+/* 非首頁 Header 樣式 (如 city-profile.html) */
+body:not(.landing) #header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+/* 非首頁 Header 連結樣式 */
+body:not(.landing) #header h1 a {
+    color: var(--primary-text) !important;
+    text-shadow: none !important;
+}
+
+body:not(.landing) #header nav>ul>li>a {
+    color: var(--secondary-text) !important;
+    text-shadow: none !important;
+}
+
+/* 非首頁 Header 懸停效果 */
+body:not(.landing) #header h1 a:hover,
+body:not(.landing) #header nav>ul>li>a:hover {
+    color: var(--accent-blue) !important;
+}
+
+/* Logo 圖片樣式調整 */
+body:not(.landing) .logo-img {
+    filter: none !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+}
+
+/* 主要內容區域頂部間距調整 */
+body:not(.landing) #main {
+    padding-top: 4.5em;
+}
+
+/* 首頁 Banner 頂部間距調整 */
+body.landing #banner {
+    padding-top: 3.5em;
+}
+
+/* ========================================
+    SECTION: Header Layout Override
+    PURPOSE: 完全覆蓋原始 Header 定位，建立新的佈局結構
+    FEATURES: Flexbox 佈局、響應式設計
+======================================== */
+
+/* Header 標題定位覆蓋 */
+#header h1 {
+    position: static !important;
+    left: auto !important;
+    height: auto !important;
+    line-height: normal !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+}
+
+/* Header 內容容器 */
+.header-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    height: 3.5em !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* Logo 容器樣式 */
+.logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* Logo 圖片樣式 */
+.logo-img {
+    height: 63px !important;
+    width: auto !important;
+    max-width: 180px !important;
+    object-fit: contain !important;
+    border-radius: 6px !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) brightness(1.1) contrast(1.1) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    padding: 4px 8px !important;
+    box-sizing: border-box !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Header 標題樣式 */
+#header h1 {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    height: auto !important;
+    line-height: normal !important;
+}
+
+/* Header 標題連結樣式 */
+#header h1 a {
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.1em !important;
+    color: white !important;
+    text-decoration: none !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    display: block !important;
+    height: auto !important;
+    border: none !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Header 標題懸停效果 */
+#header h1 a:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ========================================
+    SECTION: Navigation Styling
+    PURPOSE: 導航選單的樣式和行為
+    FEATURES: 懸停效果、響應式設計
+======================================== */
+
+/* 導航定位覆蓋 */
+#header nav {
+    position: static !important;
+    right: auto !important;
+    top: auto !important;
+    height: auto !important;
+    line-height: normal !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* 導航列表樣式 */
+#header nav>ul {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+/* 導航項目樣式 */
+#header nav>ul>li {
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+/* 導航連結樣式 */
+#header nav>ul>li>a {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    white-space: nowrap !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 導航連結懸停效果 */
+#header nav>ul>li>a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* 選單切換按鈕樣式 */
+#header nav>ul>li>a.menuToggle {
+    display: none !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 0.5rem !important;
+    border-radius: 6px !important;
+}
+
+/* 選單切換按鈕圖示 */
+#header nav>ul>li>a.menuToggle:after {
+    content: '\f0c9' !important;
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900 !important;
+    font-size: 1.2rem !important;
+}
+
+/* ========================================
+    SECTION: Banner Component Styling
+    PURPOSE: 首頁橫幅區域的樣式設計
+    FEATURES: 背景圖片、動畫效果、文字樣式
+======================================== */
+
+/* Banner 容器樣式 */
+#banner {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.9) 0%, rgba(30, 64, 175, 0.9) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Banner 背景遮罩 */
+#banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+    animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+/* Banner 背景動畫 */
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Banner 內容容器 */
+#banner .inner {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Banner 內容淡入動畫 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Banner 標題樣式 */
+#banner h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+/* Banner 標題裝飾線 */
+#banner h2:before,
+#banner h2:after {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.6);
+    margin: 0 1rem;
+    vertical-align: middle;
+}
+
+/* Banner 描述文字 */
+#banner p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+    SECTION: Button Component Styling
+    PURPOSE: 按鈕組件的統一樣式設計
+    FEATURES: 漸層背景、懸停效果、動畫
+======================================== */
+
+/* 主要按鈕樣式 */
+.more,
+.button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.875rem 2rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: var(--gradient-blue) !important;
+    color: white !important;
+    box-shadow: var(--shadow) !important;
+    min-width: 140px !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+}
+
+/* 按鈕懸停效果 */
+.more:hover,
+.button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* 按鈕點擊效果 */
+.more:active,
+.button:active {
+    transform: translateY(0) !important;
+}
+
+/* 按鈕背景動畫 */
+.more::before,
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+/* 按鈕懸停時背景動畫 */
+.more:hover::before,
+.button:hover::before {
+    left: 100%;
+}
+
+/* 邊框按鈕樣式 */
+.button-border {
+    background: transparent !important;
+    border: 2px solid var(--accent-blue) !important;
+    color: var(--accent-blue) !important;
+    box-shadow: none !important;
+}
+
+/* 邊框按鈕懸停效果 */
+.button-border:hover {
+    background: var(--accent-blue) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+/* ========================================
+    SECTION: Layout Components
+    PURPOSE: 頁面佈局組件的樣式
+    FEATURES: 容器、包裝器、間距
+======================================== */
+
+/* 包裝器容器樣式 */
+.wrapper {
+    padding: 4rem 0;
+    background: var(--secondary-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 包裝器懸停效果 */
+.wrapper:hover {
+    background: var(--primary-bg);
+}
+
+/* 不同風格的包裝器 */
+.wrapper.style1 {
+    background: var(--primary-bg);
+}
+
+.wrapper.style2 {
+    background: var(--secondary-bg);
+}
+
+.wrapper.style3 {
+    background: var(--accent-bg);
+}
+
+.wrapper.style4 {
+    background: var(--gradient-blue);
+    color: white;
+}
+
+/* 包裝器內容樣式 */
+.wrapper .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ========================================
+    SECTION: Feature Cards Styling
+    PURPOSE: 特色卡片組件的樣式設計
+    FEATURES: 懸停效果、圖示、動畫
+======================================== */
+
+/* 特色網格佈局 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* 特色卡片樣式 */
+.feature-card {
+    background: var(--secondary-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+/* 特色卡片背景效果 */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-blue);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* 特色卡片懸停效果 */
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* 特色圖示樣式 */
+.feature-icon {
+    margin-bottom: 1.5rem;
+}
+
+.feature-icon .icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* 特色圖示懸停效果 */
+.feature-card:hover .feature-icon .icon {
+    transform: scale(1.1);
+}
+
+/* 特色內容樣式 */
+.feature-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-text);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.feature-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.feature-content p {
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================
+    SECTION: Features List Styling
+    PURPOSE: 特色列表組件的樣式
+    FEATURES: 圖示、懸停效果、動畫
+======================================== */
+
+/* 特色列表容器 */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* 特色列表項目 */
+.features li {
+    background: var(--secondary-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    list-style: none;
+    text-align: center;
+}
+
+/* 特色列表項目背景效果 */
+.features li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-teal);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* 特色列表項目懸停效果 */
+.features li:hover::before {
+    transform: scaleX(1);
+}
+
+.features li:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* 特色列表標題 */
+.features h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-text);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+/* 特色列表描述 */
+.features p {
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================
+    SECTION: Icon Components
+    PURPOSE: 圖示組件的樣式設計
+    FEATURES: 大小、顏色、動畫
+======================================== */
+
+/* 主要圖示樣式 */
+.icon.major {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-amber);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* 主要圖示懸停效果 */
+.features li:hover .icon.major {
+    transform: scale(1.1);
+}
+
+/* 不同風格的圖示 */
+.icon.style1 {
+    color: var(--accent-blue);
+}
+
+.icon.style2 {
+    color: var(--accent-teal);
+}
+
+.icon.style3 {
+    color: var(--accent-amber);
+}
+
+/* ========================================
+    SECTION: Footer Component Styling
+    PURPOSE: 頁面底部組件的樣式
+    FEATURES: 背景、連結、版權資訊
+======================================== */
+
+/* 頁腳容器 */
+#footer {
+    background: var(--primary-text);
+    color: white;
+    padding: 3rem 0 2rem;
+    text-align: center;
+}
+
+/* 頁腳圖示容器 */
+#footer .icons {
+    margin-bottom: 2rem;
+}
+
+/* 頁腳圖示連結 */
+#footer .icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* 頁腳圖示懸停效果 */
+#footer .icons a:hover {
+    background: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+/* 頁腳版權資訊 */
+#footer .copyright {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* 頁腳版權連結 */
+#footer .copyright a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+#footer .copyright a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+    SECTION: Responsive Design
+    PURPOSE: 響應式設計的媒體查詢
+    BREAKPOINTS: 980px (平板), 736px (手機)
+======================================== */
+
+/* 平板裝置適配 (980px 以下) */
+@media screen and (max-width: 980px) {
+    /* Header 內容調整 */
+    .header-content {
+        padding: 0 1rem;
+    }
+    
+    /* Logo 圖片縮小 */
+    .logo-img {
+        height: 50px;
+        max-width: 140px;
+    }
+    
+    /* Header 標題縮小 */
+    #header h1 a {
+        font-size: 1.2rem;
+    }
+    
+    /* Logo 間距調整 */
+    .logo {
+        gap: 0.5rem;
+    }
+    
+    /* 導航項目調整 */
+    #header nav>ul>li>a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    /* Banner 內容調整 */
+    #banner .inner {
+        padding: 3rem 1.5rem;
+    }
+    
+    /* 包裝器內容調整 */
+    .wrapper .inner {
+        padding: 0 1.5rem;
+    }
+    
+    /* 特色網格調整 */
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    /* 特色列表調整 */
+    .features {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* 手機裝置適配 (736px 以下) */
+@media screen and (max-width: 736px) {
+    /* Header 高度調整 */
+    #header {
+        height: 3em;
+        line-height: 3em;
+    }
+    
+    /* Header 內容調整 */
+    .header-content {
+        padding: 0 1rem;
+        height: 3em;
+    }
+    
+    /* Logo 調整 */
+    .logo {
+        gap: 0.25rem;
+    }
+    
+    /* Logo 圖片進一步縮小 */
+    .logo-img {
+        height: 40px;
+        max-width: 120px;
+    }
+    
+    /* Header 標題進一步縮小 */
+    #header h1 a {
+        font-size: 1rem;
+    }
+    
+    /* 導航項目調整 */
+    #header nav>ul>li>a {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    /* 選單切換按鈕顯示 */
+    #header nav>ul>li>a.menuToggle:after {
+        font-size: 1rem;
+    }
+    
+    /* Banner 調整 */
+    #banner {
+        padding-top: 3em;
+    }
+    
+    /* Banner 標題縮小 */
+    #banner h2 {
+        font-size: 2.5rem;
+    }
+    
+    /* 主要標題調整 */
+    header.major {
+        margin-bottom: 2rem;
+    }
+    
+    header.major h2 {
+        font-size: 2rem;
+    }
+    
+    /* 包裝器內容調整 */
+    .wrapper .inner {
+        padding: 0 1rem;
+    }
+    
+    /* 特色網格調整 */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* 特色列表調整 */
+    .features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* 特色卡片調整 */
+    .feature-card {
+        padding: 1.5rem;
+    }
+}

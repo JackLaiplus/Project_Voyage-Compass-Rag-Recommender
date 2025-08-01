@@ -1,0 +1,1299 @@
+/* Custom Styles for Index Page */
+
+/* Reset body and html margins/padding */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Force page wrapper to start at top */
+#page-wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Fix banner spacing */
+#banner {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Force hero section to start at very top */
+.hero-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Override main.css body background for our page */
+body.landing {
+    background: transparent !important;
+}
+
+/* Reduce section margins by 50% for city pages */
+.wrapper {
+    padding: 3em 0 2em 0 !important;
+}
+
+/* City Profile Full-Width Header Section */
+.city-profile-full-width {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.city-profile-full-width::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* City Profile Header - Full Width Override */
+article #main section.wrapper.style1:first-child {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    position: relative;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    min-height: 100vh;
+    background: none !important;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+article #main section.wrapper.style1:first-child .inner {
+    padding: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* Alternative targeting for pages with city-profile-header */
+.wrapper.style1 .city-profile-header {
+    /* This will be overridden by the parent selector above */
+}
+
+/* City Profile Full Width Class - More Specific */
+.city-profile-full-width {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    position: relative;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    min-height: 100vh;
+    background: none !important;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.city-profile-full-width .inner {
+    padding: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* 讓城市頁 Banner 背景圖真正全螢幕，移除左右空白 */
+.city-profile-header {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    min-height: 100vh;
+    padding: 0 !important;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.city-profile-header .inner {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.city-profile-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/* Dynamic background images for each city */
+.city-profile-header[data-city="london"]::before {
+    background-image: url('../images/large/london1.jpg');
+}
+
+.city-profile-header[data-city="singapore"]::before {
+    background-image: url('../images/large/singapore2.jpg');
+}
+
+.city-profile-header[data-city="new-york"]::before {
+    background-image: url('../images/large/nyc1.jpg');
+}
+
+.city-profile-header[data-city="san-francisco"]::before {
+    background-image: url('../images/large/sf2.jpg');
+}
+
+.city-profile-header[data-city="sydney"]::before {
+    background-image: url('../images/large/sydney1.jpg');
+}
+
+.city-profile-header[data-city="vancouver"]::before {
+    background-image: url('../images/large/vancouver1.jpg');
+}
+
+.city-profile-header[data-city="seoul"]::before {
+    background-image: url('../images/large/seoul1.jpg');
+}
+
+.city-profile-header[data-city="tokyo"]::before {
+    background-image: url('../images/large/tokyo1.jpg');
+}
+
+.city-profile-header[data-city="taipei"]::before {
+    background-image: url('../images/large/taipei1.jpg');
+}
+
+.city-profile-header[data-city="bangkok"]::before {
+    background-image: url('../images/large/bangkok1.jpg');
+}
+
+.city-profile-header[data-city="hong-kong"]::before {
+    background-image: url('../images/large/hongkong1.jpg');
+}
+
+.city-profile-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 1000px;
+    padding: 2rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.city-profile-content h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: white !important;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 1px 1px 2px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.02em;
+}
+
+.city-profile-content h3 {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.95) !important;
+    margin-bottom: 3rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    line-height: 1.4;
+}
+
+/* Scroll indicator for city pages */
+.city-profile-header::after {
+    content: '';
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* Hide the separate image container since we're using background */
+.city-profile-image {
+    display: none;
+}
+
+/* Radar Chart Styling in City Profile */
+.radar-section {
+    margin-top: 2rem;
+}
+
+.radar-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.radar-chart {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.radar-svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive Design for City Profile */
+@media screen and (max-width: 980px) {
+    .city-profile-header {
+        min-height: 80vh;
+        padding: 2rem 1rem;
+    }
+
+    .city-profile-content {
+        padding: 2rem 1rem;
+        max-width: 800px;
+    }
+
+    .city-profile-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .city-profile-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .city-profile-header::before {
+        background-attachment: scroll;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .city-profile-header {
+        min-height: 70vh;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .city-profile-content {
+        padding: 1.5rem 1rem;
+        max-width: 600px;
+    }
+
+    .city-profile-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .city-profile-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .city-profile-header::after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .city-profile-header {
+        min-height: 60vh;
+    }
+
+    .city-profile-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .city-profile-content h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .city-profile-header::after {
+        display: none;
+    }
+}
+
+/* Custom Button Styles */
+.btn {
+  position: relative;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 6em;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: black;
+  background-color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.6) scaleY(1.6);
+    opacity: 0;
+}
+
+/* 漣漪動畫效果 */
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+/* 按鈕焦點狀態 */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* 按鈕禁用狀態 */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* 按鈕載入狀態 */
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Left Menu Styles - Clean Design */
+.left-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #e2e8f0;
+}
+
+.menu-header {
+    padding: 1rem 1rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.menu-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menu-logo-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-logo img {
+    height: 180px;
+    width: auto;
+    border-radius: 4px;
+}
+
+/* .menu-logo h1 {
+    color: #1e293b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    line-height: 1.2;
+} */
+
+.menu-nav {
+    padding: 0.5rem 0;
+}
+
+.menu-section {
+    margin-bottom: 0.25rem;
+}
+
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    padding-left: 0.75rem;
+}
+
+.menu-item img {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5rem;
+    margin-left: 0;
+    vertical-align: middle;
+}
+
+.menu-item .icon {
+    margin-right: 0.5rem;
+    margin-left: 0;
+    width: 1.2em;
+    display: inline-block;
+    color: #94a3b8;
+}
+
+.menu-item:hover {
+    background: #f1f5f9;
+    color: #3b82f6;
+}
+
+.menu-item:hover .icon {
+    color: #3b82f6;
+}
+
+.menu-item.active,
+.menu-item.active i,
+.menu-item[aria-current="page"],
+.menu-item[aria-current="page"] i {
+    color: #3b82f6 !important;
+}
+
+/* Main menu sections with light grey background */
+.main-menu-item {
+    background: #f1f5f9;
+    border-left: 4px solid #3b82f6;
+    font-weight: 600;
+    margin-bottom: 0;
+    /* 移除 main-menu-item 間距 */
+    margin-top: 0;
+    margin: 0;
+    padding-left: 0.5rem;
+    text-align: left;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.main-menu-item .icon {
+    color: #64748b;
+}
+
+/* .main-menu-item:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+    padding-left: 1.5rem;
+} */
+
+.main-menu-item:hover .icon {
+    color: #3b82f6;
+}
+
+
+
+.main-content {
+    margin-left: 208px;
+    min-height: 100vh;
+    position: relative;
+    top: 0;
+}
+
+/* Random Background Hero */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    /* 移除可能與 JavaScript 衝突的背景屬性 */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-attachment: fixed; */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 800px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-button-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Original More Button Style */
+.more,
+.more.scrolly {
+    background: transparent !important;
+    border: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+    padding: 0.8em 0;
+    font-weight: 600;
+    transition: color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.more:hover,
+.more:active,
+.more.scrolly:hover,
+.more.scrolly:active {
+    background: transparent !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+#banner .more {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 0.2rem;
+    color: rgba(255, 255, 255, 0.5);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    margin: 0;
+    line-height: 4rem;
+    transition: all 0.3s ease;
+}
+
+#banner .more:hover {
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Character Cards - Using Original Features Hover Grid Style */
+.character-cards {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, #c8e3ff 0%, #6fb6ff 100%);
+}
+
+.cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-hover-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 0.7rem;
+}
+
+.feature-hover-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid #cbd5e1;
+    transition: all 0.4s ease;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+    min-height: 320px;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    border-bottom: none;
+}
+
+/* Animated Border Effect for Feature Hover Cards */
+.feature-hover-card::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(90deg, transparent, #3b82f6, #2563eb, #1e40af, #3b82f6, transparent);
+    background-size: 300% 300%;
+    border-radius: 20px;
+    z-index: -1;
+    animation: borderFlow 3s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 4px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+}
+
+.feature-hover-card:hover::before {
+    opacity: 1;
+}
+
+.feature-hover-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+}
+
+@keyframes borderFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    75% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Icon Styling */
+.feature-icon {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.feature-gif-icon {
+    width: 5rem !important;
+    height: 5rem !important;
+    display: block;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-hover-card:hover .feature-gif-icon {
+    transform: scale(1.15);
+}
+
+.feature-hover-card h3 {
+    color: #2563eb !important;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.feature-details {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+    max-height: none;
+    overflow: visible;
+}
+
+.feature-details h4 {
+    color: #3b82f6 !important;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: none;
+}
+
+.feature-details p {
+    color: #2563eb !important;
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 4rem 2rem;
+    background: white;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    aspect-ratio: 4/3;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white !important;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-item-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 1), 2px 2px 4px rgba(0, 0, 0, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+.gallery-item-desc {
+    font-size: 0.8rem;
+    opacity: 1;
+    color: #ffffff !important;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 1), 1px 1px 3px rgba(0, 0, 0, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .features-hover-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 0.8rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-menu {
+        width: 100%;
+        z-index: 1002;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-button-container {
+        margin-top: 1.5rem;
+    }
+
+    /* 移除衝突的 .btn 樣式，讓主要樣式生效 */
+    /* .btn {
+        font-size: 15px;
+        padding: 0.8em 2em;
+    } */
+
+    .features-hover-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 0.7rem;
+    }
+
+    .feature-hover-card {
+        min-height: 280px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+}
+
+
+
+/* City Menu Items with Building Icon */
+.menu-item i.fa-building {
+    color: #3b82f6;
+}
+
+/* Character page styling */
+.character-profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.character-portrait {
+    flex: 0 0 200px;
+}
+
+.character-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.character-info {
+    flex: 1;
+}
+
+.role-title h2 {
+    color: #3b82f6;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.role-title h3 {
+    color: #64748b;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+.role-description h3 {
+    color: #1e293b;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.role-description ol {
+    color: #475569;
+    font-size: 1.1em;
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+.role-description li {
+    margin-bottom: 8px;
+}
+
+.section-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #3b82f6, #1d4ed8);
+    margin: 40px 0;
+}
+
+.recommendation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rec-item {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.rec-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.rec-item.gold {
+    border-color: #fbbf24;
+    background: linear-gradient(135deg, #fef3c7, #fbbf24);
+}
+
+.rec-item.silver {
+    border-color: #94a3b8;
+    background: linear-gradient(135deg, #f1f5f9, #94a3b8);
+}
+
+.rec-item.bronze {
+    border-color: #f59e0b;
+    background: linear-gradient(135deg, #fef3c7, #f59e0b);
+}
+
+.rec-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.rec-item p {
+    color: #475569;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.ranking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.ranking-category {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.ranking-category h3 {
+    color: #1e293b;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.ranking-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chart-bar {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.chart-bar:hover::before {
+    transform: translateX(100%);
+}
+
+@media (max-width: 768px) {
+    .character-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .character-portrait {
+        flex: none;
+        align-self: center;
+    }
+
+    .recommendation-list {
+        gap: 15px;
+    }
+
+    .ranking-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Employment Section Flex Layout */
+.employment-section {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.radar-section,
+.employment-data {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.radar-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    padding: 2rem 1rem;
+    margin-bottom: 0;
+}
+
+.radar-chart {
+    max-width: 400px;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .employment-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .radar-section,
+    .employment-data {
+        width: 100%;
+        padding: 1.2rem 0.5rem;
+    }
+
+    .radar-chart {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .radar-section,
+    .employment-data {
+        padding: 0.5rem 0.2rem;
+    }
+}
+
+/* 徹底移除 city 頁面 banner section 的 scroll indicator/arrow */
+.city-profile-header .more,
+.city-profile-header .scroll-indicator,
+.city-profile-header .scroll-down,
+.city-profile-header .scrolly,
+.city-profile-header .arrow,
+.city-profile-header:after {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.menu-item i {
+    margin-right: 0.5rem;
+    margin-left: 0;
+    width: 1.2em;
+    text-align: center;
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+/* 角色項目 icon 顏色 */
+.menu-item i.fa-rocket {
+    color: #3b82f6;
+}
+
+.menu-item i.fa-shield-alt {
+    color: #10b981;
+}
+
+.menu-item i.fa-laptop {
+    color: #f59e0b;
+}
+
+.menu-item i.fa-lightbulb {
+    color: #8b5cf6;
+}

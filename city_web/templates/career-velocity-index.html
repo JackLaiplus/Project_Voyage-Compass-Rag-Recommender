@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025年全球職涯速度指數</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/index-custom.css" />
+    <link rel="stylesheet" href="assets/css/career-velocity-index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="landing is-preload">
+
+    <!-- Left Menu -->
+    <nav class="left-menu" id="leftMenu">
+        <div class="menu-header">
+            <div class="menu-logo">
+                <div class="menu-logo-circle">
+                    <img src="sample assets/Voyage Compass Logo.png" alt="Voyage Compass Logo" />
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-nav">
+            <div class="menu-section">
+                <a href="index.html" class="menu-item main-menu-item">
+                    首頁
+                </a>
+                <a href="index.html#gallery" class="menu-item main-menu-item">
+                    城市探索
+                </a>
+                <a href="bangkok.html" class="menu-item">
+                    <img src="sample assets/bkk_icon_1.png" alt="Bangkok">曼谷 Bangkok
+                </a>
+                <a href="hong-kong.html" class="menu-item">
+                    <img src="sample assets/hkg_icon_1.png" alt="Hong Kong">香港 Hong Kong
+                </a>
+                <a href="london.html" class="menu-item">
+                    <img src="sample assets/lon_icon_1.png" alt="London">倫敦 London
+                </a>
+                <a href="new-york-city.html" class="menu-item">
+                    <img src="sample assets/nyc_icon_1.png" alt="New York City">紐約 New York City
+                </a>
+                <a href="san-francisco.html" class="menu-item">
+                    <img src="sample assets/sfo_icon_1.png" alt="San Francisco">舊金山 San Francisco
+                </a>
+                <a href="seoul.html" class="menu-item">
+                    <img src="sample assets/sel_icon_1.png" alt="Seoul">首爾 Seoul
+                </a>
+                <a href="singapore.html" class="menu-item">
+                    <img src="sample assets/sgp_icon_1.png" alt="Singapore">新加坡 Singapore
+                </a>
+                <a href="sydney.html" class="menu-item">
+                    <img src="sample assets/syd_icon_1.png" alt="Sydney">雪梨 Sydney
+                </a>
+                <a href="taipei.html" class="menu-item">
+                    <img src="sample assets/tpe_icon_1.png" alt="Taipei">台北 Taipei
+                </a>
+                <a href="tokyo.html" class="menu-item">
+                    <img src="sample assets/tyo_icon_1.png" alt="Tokyo">東京 Tokyo
+                </a>
+                <a href="vancouver.html" class="menu-item">
+                    <img src="sample assets/yvr_icon_1.png" alt="Vancouver">溫哥華 Vancouver
+                </a>
+                <a href="index.html#characters" class="menu-item main-menu-item">
+                    角色情境
+                </a>
+                <a href="rocket-dev.html" class="menu-item">
+                    <i class="fas fa-rocket"></i>職場新人 Rocket Dev
+                </a>
+                <a href="steady-pro.html" class="menu-item">
+                    <i class="fas fa-shield-alt"></i>穩健高薪 Steady Pro
+                </a>
+                <a href="nomad-coder.html" class="menu-item">
+                    <i class="fas fa-laptop"></i>數位遊牧 Nomad Coder
+                </a>
+                <a href="startup-maverick.html" class="menu-item">
+                    <i class="fas fa-lightbulb"></i>創業浪客 Startup Maverick
+                </a>
+                <a href="#" class="menu-item main-menu-item">
+                    指標一覽表
+                </a>
+                <a href="career-velocity-index.html" class="menu-item active">
+                    <img src="sample assets/advancement.png" alt="Feature">Career Velocity Index
+                </a>
+                <a href="coworking-space.html" class="menu-item">
+                    <img src="sample assets/briefcase.png" alt="Feature">Co-working Space Index
+                </a>
+                </a>
+                <a href="global-tech-env.html" class="menu-item">
+                    <img src="sample assets/technology.png" alt="Feature">City Tech Index
+                </a>
+                </a>
+                <a href="rent-comparison.html" class="menu-item">
+                    <img src="sample assets/home.png" alt="Feature">Rent Comparison
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <h1 class="text-2xl md:text-3xl font-bold text-center text-[#073B4C]">2025年全球職涯速度指數</h1>
+            <p class="text-center text-gray-500 mt-1">發掘全球最具活力的科技中心，加速您的職涯發展</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <section id="introduction" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 section-title">什麼是職涯速度？</h2>
+            <p class="text-center text-gray-700 max-w-4xl mx-auto mb-8">
+                「職涯速度分數」是一個綜合指數，旨在從專業人士的角度衡量一個城市科技生態系統的活力和發展動能。它量化了哪些城市能為快速技能發展、職位晉升和機會創造提供最肥沃的土壤。分數越高，代表市場越具活力，科技人才的職涯發展也越快。該分數由三個加權支柱構成：
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="factor-card factor-1 p-6 rounded-lg shadow-sm flex flex-col">
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-[#FF6B6B]">40%</div>
+                        <h3 class="text-xl font-bold mt-2 text-[#073B4C]">新創密度</h3>
+                    </div>
+                    <p class="mt-4 text-gray-600 text-sm flex-grow">人均新創企業數量是衡量一個地區創業文化、競爭強度和就業機會多樣性的關鍵指標。高密度意味著人才有更多的選擇，也促進了整個生態系統的知識溢出和創新循環。</p>
+                </div>
+                <div class="factor-card factor-2 p-6 rounded-lg shadow-sm flex flex-col">
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-[#FFD166]">35%</div>
+                        <h3 class="text-xl font-bold mt-2 text-[#073B4C]">創投動能</h3>
+                    </div>
+                    <p class="mt-4 text-gray-600 text-sm flex-grow">早期風險投資（VC）資金的年增長率是一個強有力的前瞻性指標，體現了市場對一個城市未來潛力的集體判斷。一個正向增長的資金環境會創造一個良性循環，是推動職涯速度的關鍵燃料。</p>
+                </div>
+                <div class="factor-card factor-3 p-6 rounded-lg shadow-sm flex flex-col">
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-[#06D6A0]">25%</div>
+                        <h3 class="text-xl font-bold mt-2 text-[#073B4C]">人才流動性</h3>
+                    </div>
+                    <p class="mt-4 text-gray-600 text-sm flex-grow">軟體工程師的平均任期反映了人才市場的競爭激烈程度。在一個充滿活力的市場中，較短的任期通常意味著更高的薪資議價能力、更快的技能迭代速度以及更豐富的職業發展機會。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="rankings" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6 lg:p-8">
+                <h2 class="text-2xl font-bold mb-2 section-title">2025年全球排名</h2>
+                <p class="text-center text-gray-700 max-w-4xl mx-auto mb-8">
+                    整體的職涯速度分數提供了每個城市科技生態系統的全面視圖。舊金山憑藉其無與倫比的新創密度和成熟、流動的人才市場，保持著領先地位。台北和新加坡等亞洲中心則在創投資金的推動下展現出卓越的發展動力，而倫敦則作為一個平衡的全球領導者脫穎而出。
+                </p>
+                <div class="chart-container h-[500px] max-h-[60vh]">
+                    <canvas id="rankingsChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="deep-dive" class="mb-12">
+            <h2 class="text-2xl font-bold mb-2 section-title">分數解構：各項指標深度剖析</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center mb-1 text-[#073B4C]">新創密度</h3>
+                    <p class="text-sm text-center text-gray-600 mb-4">每十萬居民新創公司數量</p>
+                    <p class="text-gray-700 text-sm mb-4">此指標揭示了一個城市的原始創業能量。舊金山的密度獨佔鰲頭，創造了一個高度競爭和機會豐富的環境。倫敦和新加坡則作為強大、成熟的國際中心緊隨其後。</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="densityChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center mb-1 text-[#073B4C]">早期創投基金增長</h3>
+                    <p class="text-sm text-center text-gray-600 mb-4">年同比增長率 (%)</p>
+                    <p class="text-gray-700 text-sm mb-4">資金增長是未來就業創造的領先指標。亞洲城市，特別是台北、曼谷和首爾，正展現爆炸性增長，標誌著全球科技投資和機會格局的重大轉變。</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="vcChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center mb-1 text-[#073B4C]">科技人才流動性</h3>
+                    <p class="text-sm text-center text-gray-600 mb-4">平均工程師任期（年）- 越低越好</p>
+                     <p class="text-gray-700 text-sm mb-4">較短的平均任期意味著一個充滿活力的市場，人才需求旺盛，專業人士頻繁更換職位以加速其職涯發展。成熟的北美和歐洲中心在這一市場活力指標上處於領先地位。</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="tenureChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center mb-1 text-[#073B4C]">城市概況比較</h3>
+                    <p class="text-sm text-center text-gray-600 mb-4">標準化成分分數</p>
+                    <p class="text-gray-700 text-sm mb-4">此圖表揭示了每個科技中心的獨特特徵。舊金山是一個全能型的領導者。台北是創投增長的強國。倫敦在所有三個指標上表現均衡，而首爾的優勢在於其蓬勃發展的投資場景。</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology-table" class="mb-12">
+             <div class="bg-white rounded-lg shadow-md p-6 lg:p-8">
+                 <h2 class="text-2xl font-bold mb-2 section-title">詳細分數明細</h2>
+                 <p class="text-center text-gray-700 max-w-4xl mx-auto mb-8">
+                    最終的職涯速度分數是通過將每個指標在0-100的範圍內進行標準化，應用定義的權重，然後將結果相加計算得出的。此表提供了每個城市的原始數據和評分過程的完全透明度。
+                 </p>
+                 <div class="overflow-x-auto">
+                    <table class="min-w-full text-sm text-left">
+                        <thead class="table-header">
+                            <tr>
+                                <th class="p-3">城市</th>
+                                <th class="p-3 text-center">新創密度<br><span class="font-normal">(每10萬人)</span></th>
+                                <th class="p-3 text-center">創投增長<br><span class="font-normal">(年增率 %)</span></th>
+                                <th class="p-3 text-center">平均任期<br><span class="font-normal">(年)</span></th>
+                                <th class="p-3 text-center">密度分數<br><span class="font-normal">(40%)</span></th>
+                                <th class="p-3 text-center">增長分數<br><span class="font-normal">(35%)</span></th>
+                                <th class="p-3 text-center">流動性分數<br><span class="font-normal">(25%)</span></th>
+                                <th class="p-3 text-center font-bold">最終分數</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataTableBody">
+                        </tbody>
+                    </table>
+                 </div>
+            </div>
+        </section>
+
+    </main>
+
+   
+
+    </div>
+
+    <script src="assets/js/career-velocity-index.js"></script>
+</body>
+</html>

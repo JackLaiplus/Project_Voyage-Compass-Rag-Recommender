@@ -1,0 +1,93 @@
+# version: '3.8'
+services:
+  city_mysql:
+    image: mysql:8.0
+    #container_name: city_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./city_mysql/init:/docker-entrypoint-initdb.d    # 建表 SQL
+      - city_mysql_data:/var/lib/mysql                 # MySQL 資料持久化
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$MYSQL_ROOT_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  data_loader:
+    build: ./data_loader
+    # container_name: data_loader
+    depends_on:
+      city_mysql:
+        condition: service_healthy
+    volumes:
+      - ./data_loader/csv:/app/csv                       # feature 資料來源
+    environment:
+      MYSQL_HOST: city_mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+
+  city_web:
+    build: ./city_web
+    # container_name: city_web
+    depends_on:
+      city_mysql:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+    environment:
+      MYSQL_HOST: city_mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+
+  city_streamlit:
+    build: ./city_streamlit
+    #  context: .
+    #  dockerfile: Dockerfile
+    #container_name: streamlit_app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./city_streamlit/data:/app/data
+    command:
+      - streamlit
+      - run
+      - streamlit_app.py
+      - --server.port=8501
+      - --server.enableCORS=false
+
+  city_rag:
+    build: ./city_rag
+    ports:
+      - "8080:8080"
+    depends_on:
+      - city_mysql
+      - qdrant
+    environment:
+      MYSQL_HOST: city_mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DB: citydb
+      QDRANT_HOST: qdrant
+      QDRANT_PORT: 6333
+      LLM_API_KEY: ${LLM_API_KEY}  # 你可用 .env 管理
+
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+
+volumes:
+  city_mysql_data:
+  qdrant_storage:

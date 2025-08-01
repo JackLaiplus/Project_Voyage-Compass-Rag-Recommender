@@ -1,0 +1,242 @@
+/* ========================================
+    FILE: job-vacancy.css
+    PURPOSE: 全球科技業就業市場儀表板專用樣式
+    FEATURES: 圖表容器、卡片樣式、響應式設計
+    AUTHOR: Voyage Compass Team
+    LAST UPDATED: 2024-12-19
+    DEPENDENCIES: main.css, custom.css
+======================================== */
+
+/* Main Content Adjustment */
+.main-content {
+    margin-left: 208px;
+    min-height: 100vh;
+    position: relative;
+    top: 0;
+}
+
+/* Page Content Styles */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #f8f9fa;
+    color: #073B4C;
+}
+
+/* Chart Container Styles */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    max-height: 400px;
+}
+
+@media (min-width: 768px) {
+    .chart-container {
+        height: 350px;
+    }
+}
+
+/* Section Card Styles */
+.section-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 2rem;
+}
+
+/* Stat Card Styles */
+.stat-card {
+    background-color: #f8fafc;
+    border-left: 4px solid #38bdf8;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Section Title Styles */
+.section-title {
+    color: #073B4C;
+    border-bottom: 3px solid #FFD166;
+    padding-bottom: 0.5rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+thead {
+    background-color: #073B4C;
+    color: #FFFFFF;
+}
+
+th {
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    color: #FFFFFF !important;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.875rem;
+}
+
+th span {
+    color: #FFFFFF !important;
+}
+
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+    font-size: 0.875rem;
+}
+
+tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Table row alternating colors */
+.table-row-even {
+    background-color: #FFFFFF;
+}
+
+.table-row-odd {
+    background-color: #F8F9FA;
+}
+
+/* Table header specific styles */
+.table-header {
+    background-color: #073B4C !important;
+    color: #FFFFFF !important;
+}
+
+.table-header th {
+    background-color: #073B4C !important;
+    color: #FFFFFF !important;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.table-header th span {
+    color: #FFFFFF !important;
+}
+
+/* Force override for table-header class */
+thead.table-header th,
+thead.table-header th span {
+    color: #FFFFFF !important;
+    background-color: #073B4C !important;
+}
+
+/* Table Header Override Styles */
+/* Override main.css table th color */
+.main-content table th {
+    color: #FFFFFF !important;
+}
+
+/* More specific table header override */
+.main-content .overflow-x-auto table thead th {
+    color: #FFFFFF !important;
+}
+
+/* Maximum specificity for table headers */
+.main-content .overflow-x-auto table thead.text-xs.text-black.uppercase.bg-gray-50 th {
+    color: #FFFFFF !important;
+}
+
+/* Force override for all table headers in this page */
+#methodology-table table th,
+#methodology-table table thead th,
+#methodology-table table thead th span {
+    color: #FFFFFF !important;
+}
+
+/* Override any Tailwind text color classes */
+.text-black {
+    color: #FFFFFF !important;
+}
+
+/* Specific override for table headers */
+table th.text-black,
+table thead th.text-black,
+table th span.text-black {
+    color: #FFFFFF !important;
+}
+
+/* Tailwind CSS Override - Force table header colors */
+.min-w-full.text-sm.text-left thead th,
+.min-w-full.text-sm.text-left thead th span {
+    color: #FFFFFF !important;
+    background-color: #073B4C !important;
+}
+
+/* Override any Tailwind text utilities on table headers */
+.text-left th,
+.text-left thead th,
+.text-left thead th span {
+    color: #FFFFFF !important;
+}
+
+/* Maximum specificity override for all table headers */
+table.min-w-full.text-sm.text-left thead th,
+table.min-w-full.text-sm.text-left thead th span,
+table.min-w-full.text-sm.text-left thead.table-header th,
+table.min-w-full.text-sm.text-left thead.table-header th span {
+    color: #FFFFFF !important;
+    background-color: #073B4C !important;
+}
+
+/* Disable all hover effects for cards */
+.main-content .card:hover {
+    transform: none !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+}
+
+/* Override any external hover effects */
+.main-content .card:hover::before {
+    transform: none !important;
+}
+
+/* Disable transitions for cards */
+.main-content .card {
+    transition: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .left-menu {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .left-menu.open {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    /* Responsive table */
+    .overflow-x-auto {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+        min-width: 600px;
+    }
+} 
