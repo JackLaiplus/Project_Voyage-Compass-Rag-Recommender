@@ -15,6 +15,9 @@ COPY . .
 
 # 開放 Flask Web 服務使用的埠口
 EXPOSE 8501
+# EXPOSE 8502
 
 # 預設啟動指令可選擇放這，compose 裡也有設 command
-CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.enableCORS=false", "--server.address 0.0.0.0"]
+# CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.enableCORS=false", "--server.address 0.0.0.0"]
+
+CMD ["streamlit", "run", "rag_app.py", "--server.port=8501", "--server.address=0.0.0.0"]

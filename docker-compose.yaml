@@ -55,6 +55,8 @@ services:
     #container_name: streamlit_app
     ports:
       - "8501:8501"
+    depends_on:
+      - city_rag
     volumes:
       - ./city_streamlit/data:/app/data
     command:
