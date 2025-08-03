@@ -1,0 +1,8 @@
+streamlit
+pandas
+altair
+plotly
+matplotlib
+pymysql
+streamlit-javascript
+requests

@@ -284,11 +284,17 @@
 				<div class="inner">
 					<div id="iframe-container" class="responsive-iframe-wrapper"></div>
 
-					<div class="responsive-iframe-wrapper">
-						<iframe src="http://localhost:8501?city=bangkok" frameborder="0" scrolling="yes"
-							style="width:100%; height:100vh; border:none;" allowfullscreen>
-						</iframe>
-					</div>
+					<script>
+						const currentHost = window.location.hostname;
+						const iframeUrl = `http://${currentHost}:8501?city=bangkok`;
+
+						const iframe = document.createElement('iframe');
+						iframe.src = iframeUrl;
+						iframe.allowFullscreen = true;
+
+						const wrapper = document.getElementById('iframe-container');
+						wrapper.appendChild(iframe);
+					</script>
 				</div>
 			</section>
 

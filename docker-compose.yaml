@@ -48,8 +48,8 @@ services:
       MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
 
-  city_streamlit:
-    build: ./city_streamlit
+  city_streamlit_dash:
+    build: ./city_streamlit_dash
     #  context: .
     #  dockerfile: Dockerfile
     #container_name: streamlit_app
@@ -58,13 +58,31 @@ services:
     depends_on:
       - city_rag
     volumes:
-      - ./city_streamlit/data:/app/data
+      - ./city_streamlit_dash/data:/app/data
     command:
       - streamlit
       - run
-      - streamlit_app.py
+      - dashboard_app.py
       - --server.port=8501
       - --server.enableCORS=false
+
+  city_streamlit_rag:
+    build: ./city_streamlit_rag
+    #  context: .
+    #  dockerfile: Dockerfile
+    #container_name: streamlit_app
+    ports:
+      - "8502:8502"
+    depends_on:
+      - city_rag
+    volumes:
+      - ./city_streamlit_rag:/app
+    command:
+      - streamlit
+      - run
+      - rag_app.py
+      - --server.port=8502
+      - --server.enableCORS=false     
 
   city_rag:
     build: ./city_rag
