@@ -85,21 +85,14 @@
                 <a href="startup-maverick" class="menu-item">
                     <i class="fas fa-lightbulb"></i>創業浪客 Startup Maverick
                 </a>
-                <a href="#" class="menu-item main-menu-item">
-                    指標一覽表
+                <a href="#" class="menu-item main-menu-item" id="recommend-link" target="_blank">
+                    推薦系統
                 </a>
-                <a href="career-velocity-index" class="menu-item active">
-                    <img src="static/images/advancement.png" alt="Feature">Career Velocity Index
-                </a>
-                <a href="coworking-space.html" class="menu-item">
-                    <img src="static/images/briefcase.png" alt="Feature">Co-working Space Index
-                </a>
-                <a href="global-tech-env.html" class="menu-item">
-                    <img src="static/images/technology.png" alt="Feature">City Tech Index
-                </a>
-                <a href="rent-comparison.html" class="menu-item">
-                    <img src="static/images/home.png" alt="Feature">Rent Comparison
-                </a>
+
+                <script>
+                    const currentHost = window.location.hostname;
+                    document.getElementById("recommend-link").href = `http://${currentHost}:8502`;
+                </script>
 
             </div>
         </div>
