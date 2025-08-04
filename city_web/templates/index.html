@@ -34,59 +34,74 @@
                 <a href="/" class="menu-item main-menu-item">
                     首頁
                 </a>
-                <a href="/#gallery" class="menu-item main-menu-item">
-                    城市探索
-                </a>
-                <a href="bangkok" class="menu-item">
-                    <img src="static/images/bkk_icon_1.png" alt="Bangkok">曼谷 Bangkok
-                </a>
-                <a href="hong-kong" class="menu-item">
-                    <img src="static/images/hkg_icon_1.png" alt="Hong Kong">香港 Hong Kong
-                </a>
-                <a href="london" class="menu-item">
-                    <img src="static/images/lon_icon_1.png" alt="London">倫敦 London
-                </a>
-                <a href="new-york-city" class="menu-item">
-                    <img src="static/images/nyc_icon_1.png" alt="New York City">紐約 New York City
-                </a>
-                <a href="san-francisco" class="menu-item">
-                    <img src="static/images/sfo_icon_1.png" alt="San Francisco">舊金山 San Francisco
-                </a>
-                <a href="seoul" class="menu-item">
-                    <img src="static/images/sel_icon_1.png" alt="Seoul">首爾 Seoul
-                </a>
-                <a href="singapore" class="menu-item">
-                    <img src="static/images/sgp_icon_1.png" alt="Singapore">新加坡 Singapore
-                </a>
-                <a href="sydney" class="menu-item">
-                    <img src="sstatic/images/syd_icon_1.png" alt="Sydney">雪梨 Sydney
-                </a>
-                <a href="taipei" class="menu-item">
-                    <img src="static/images/tpe_icon_1.png" alt="Taipei">台北 Taipei
-                </a>
-                <a href="tokyo" class="menu-item">
-                    <img src="static/images/tyo_icon_1.png" alt="Tokyo">東京 Tokyo
-                </a>
-                <a href="vancouver" class="menu-item">
-                    <img src="static/images/yvr_icon_1.png" alt="Vancouver">溫哥華 Vancouver
-                </a>
-                <a href="/#characters" class="menu-item main-menu-item">
-                    角色情境
-                </a>
-                <a href="rocket-dev" class="menu-item">
-                    <i class="fas fa-rocket"></i>職場新人 Rocket Dev
-                </a>
-                <a href="steady-pro" class="menu-item">
-                    <i class="fas fa-shield-alt"></i>穩健高薪 Steady Pro
-                </a>
-                <a href="nomad-coder" class="menu-item">
-                    <i class="fas fa-laptop"></i>數位遊牧 Nomad Coder
-                </a>
-                <a href="startup-maverick" class="menu-item">
-                    <i class="fas fa-lightbulb"></i>創業浪客 Startup Maverick
-                </a>
+                <!-- Accordion：城市探索選單 -->
+                <div class="menu-item main-menu-item">
+                    <button id="cityAccordionToggle" class="w-full text-left flex items-center justify-between">
+                        城市探索
+                        <i class="fas fa-chevron-down ml-2 transition-transform duration-200"
+                            id="cityAccordionIcon"></i>
+                    </button>
+                </div>
+                <div id="cityAccordionContent" class="ml-4 mt-1 space-y-1 hidden">
+                    <a href="bangkok" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 曼谷 Bangkok
+                    </a>
+                    <a href="hong-kong" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 香港 Hong Kong
+                    </a>
+                    <a href="london" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 倫敦 London
+                    </a>
+                    <a href="new-york-city" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 紐約 New York City
+                    </a>
+                    <a href="san-francisco" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 舊金山 San Francisco
+                    </a>
+                    <a href="seoul" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 首爾 Seoul
+                    </a>
+                    <a href="singapore" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 新加坡 Singapore
+                    </a>
+                    <a href="sydney" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 雪梨 Sydney
+                    </a>
+                    <a href="taipei" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 台北 Taipei
+                    </a>
+                    <a href="tokyo" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 東京 Tokyo
+                    </a>
+                    <a href="vancouver" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-search"></i> 溫哥華 Vancouver
+                    </a>
+                </div>
+
+                <!-- Accordion：角色情境選單 -->
+                <div class="menu-item main-menu-item">
+                    <button id="accordionToggle" class="w-full text-left flex items-center justify-between">
+                        角色情境
+                        <i class="fas fa-chevron-down ml-2 transition-transform duration-200" id="accordionIcon"></i>
+                    </button>
+                </div>
+                <div id="accordionContent" class="ml-4 mt-1 space-y-1 hidden">
+                    <a href="rocket-dev" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-rocket"></i> 職場新人 Rocket Dev
+                    </a>
+                    <a href="steady-pro" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-shield-alt"></i> 穩健高薪 Steady Pro
+                    </a>
+                    <a href="nomad-coder" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-laptop"></i> 數位遊牧 Nomad Coder
+                    </a>
+                    <a href="startup-maverick" class="menu-item block px-4 py-2 text-sm hover:bg-gray-100 rounded">
+                        <i class="fas fa-lightbulb"></i> 創業浪客 Startup Maverick
+                    </a>
+                </div>
+
                 <a href="#" class="menu-item main-menu-item" id="recommend-link" target="_blank">
-                    推薦系統
+                    RAG
                 </a>
 
                 <script>
@@ -266,6 +281,36 @@
     <script src="static/js/util.js"></script>
     <script src="static/js/main.js"></script>
     <script src="static/js/index-custom.js"></script>
+
+    <!-- 城市探索 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.getElementById("accordionToggle");
+            const content = document.getElementById("accordionContent");
+            const icon = document.getElementById("accordionIcon");
+
+            toggle.addEventListener("click", function () {
+                content.classList.toggle("hidden");
+                icon.classList.toggle("rotate-180");
+            });
+        });
+    </script>
+
+    <!-- 角色情境 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cityToggle = document.getElementById("cityAccordionToggle");
+            const cityContent = document.getElementById("cityAccordionContent");
+            const cityIcon = document.getElementById("cityAccordionIcon");
+
+            if (cityToggle && cityContent && cityIcon) {
+                cityToggle.addEventListener("click", function () {
+                    cityContent.classList.toggle("hidden");
+                    cityIcon.classList.toggle("rotate-180");
+                });
+            }
+        });
+    </script>
 
 </body>
 
